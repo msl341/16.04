@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>KeyBoard</class>
+ <widget class="QWidget" name="KeyBoard">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="keyboardWidget" native="true">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>400</y>
+     <width>1070</width>
+     <height>371</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: none;</string>
+   </property>
+   <widget class="movablePushbutton" name="moveLBtn">
+    <property name="geometry">
+     <rect>
+      <x>6</x>
+      <y>60</y>
+      <width>40</width>
+      <height>306</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(56,53,51);
+color: rgb(0, 0, 0);
+border-image: none;
+border:none;
+border-top-left-radius: 10px;
+border-bottom-left-radius:10px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/tu/ALL-IN-ONE ICON/move_gray.png</normaloff>:/tu/ALL-IN-ONE ICON/move_gray.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="movablePushbutton" name="moveRBtn">
+    <property name="geometry">
+     <rect>
+      <x>1026</x>
+      <y>60</y>
+      <width>40</width>
+      <height>306</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(56,53,51);
+color: rgb(0, 0, 0);
+border-image: none;
+border:none;
+border-top-right-radius: 10px;
+border-bottom-right-radius:10px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/tu/ALL-IN-ONE ICON/move_gray.png</normaloff>:/tu/ALL-IN-ONE ICON/move_gray.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QQuickWidget" name="quickWidget">
+    <property name="geometry">
+     <rect>
+      <x>46</x>
+      <y>60</y>
+      <width>980</width>
+      <height>306</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(114, 159, 207);</string>
+    </property>
+    <property name="resizeMode">
+     <enum>QQuickWidget::SizeRootObjectToView</enum>
+    </property>
+    <property name="source">
+     <url>
+      <string>qrc:/VKeyboard.qml</string>
+     </url>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QQuickWidget</class>
+   <extends>QWidget</extends>
+   <header>QtQuickWidgets/QQuickWidget</header>
+  </customwidget>
+  <customwidget>
+   <class>movablePushbutton</class>
+   <extends>QPushButton</extends>
+   <header>mykey.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

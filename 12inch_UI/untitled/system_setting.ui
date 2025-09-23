@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>system_setting</class>
+ <widget class="QWidget" name="system_setting">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QLabel" name="label_b">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1280</width>
+     <height>805</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/tu/ALL-IN-ONE ICON/BKG.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>70</y>
+     <width>1081</width>
+     <height>681</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout" rowminimumheight="290,290" columnminimumwidth="290,290,290">
+    <item row="0" column="0">
+     <widget class="Label_formatting" name="label_formatting">
+      <property name="minimumSize">
+       <size>
+        <width>290</width>
+        <height>290</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>290</width>
+        <height>290</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/tu/ALL-IN-ONE ICON/iconBKG.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>:/tu/ALL-IN-ONE ICON/icon_format.png</pixmap>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="Label_reset" name="label_reset">
+      <property name="maximumSize">
+       <size>
+        <width>290</width>
+        <height>290</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/tu/ALL-IN-ONE ICON/iconBKG.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>:/tu/ALL-IN-ONE ICON/icon_reset.png</pixmap>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="Label_versions" name="label_versions">
+      <property name="maximumSize">
+       <size>
+        <width>290</width>
+        <height>290</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/tu/ALL-IN-ONE ICON/iconBKG.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>:/tu/ALL-IN-ONE ICON/icon_info.png</pixmap>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="Label_time" name="label_time">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>290</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/tu/ALL-IN-ONE ICON/iconBKG.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>:/tu/ALL-IN-ONE ICON/icon_time.png</pixmap>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="Label_language" name="label_language">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/tu/ALL-IN-ONE ICON/iconBKG.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>:/tu/ALL-IN-ONE ICON/icon_language.png</pixmap>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="Label_return" name="label_return">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/tu/ALL-IN-ONE ICON/iconBKG.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>:/tu/ALL-IN-ONE ICON/icon_back.png</pixmap>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="nameBtnFormat">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>330</y>
+     <width>290</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+border:none;
+background-color:transparent;
+border-image: none;</string>
+   </property>
+   <property name="text">
+    <string>Format</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="nameBtnReset">
+   <property name="geometry">
+    <rect>
+     <x>485</x>
+     <y>330</y>
+     <width>290</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+border:none;
+background-color:transparent;
+border-image: none;</string>
+   </property>
+   <property name="text">
+    <string>Reset</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="nameBtnVersion">
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>330</y>
+     <width>290</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+border:none;
+background-color:transparent;
+border-image: none;</string>
+   </property>
+   <property name="text">
+    <string>Version Info</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="nameBtnTimeSet">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>660</y>
+     <width>290</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+border:none;
+background-color:transparent;
+border-image: none;</string>
+   </property>
+   <property name="text">
+    <string>Time Set</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="nameBtnLanSet">
+   <property name="geometry">
+    <rect>
+     <x>485</x>
+     <y>660</y>
+     <width>290</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+border:none;
+background-color:transparent;
+border-image: none;</string>
+   </property>
+   <property name="text">
+    <string>Language Set</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="nameBtnLanSet_2">
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>660</y>
+     <width>290</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+border:none;
+background-color:transparent;
+border-image: none;</string>
+   </property>
+   <property name="text">
+    <string>Back</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Label_formatting</class>
+   <extends>QLabel</extends>
+   <header>system_setting.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Label_reset</class>
+   <extends>QLabel</extends>
+   <header>system_setting.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Label_versions</class>
+   <extends>QLabel</extends>
+   <header>system_setting.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Label_time</class>
+   <extends>QLabel</extends>
+   <header>system_setting.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Label_language</class>
+   <extends>QLabel</extends>
+   <header>system_setting.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Label_return</class>
+   <extends>QLabel</extends>
+   <header>system_setting.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

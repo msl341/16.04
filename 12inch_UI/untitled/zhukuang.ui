@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>zhukuang</class>
+ <widget class="QWidget" name="zhukuang">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QLabel" name="label_b">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1280</width>
+     <height>805</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/tu/ALL-IN-ONE ICON/BKG.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>70</y>
+     <width>1081</width>
+     <height>681</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout" rowminimumheight="290,290" columnminimumwidth="290,290,290">
+    <item row="0" column="2">
+     <widget class="Label_video" name="label_video">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/tu/ALL-IN-ONE ICON/iconBKG.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="SP.qrc">:/tu/ALL-IN-ONE ICON/icon_video.png</pixmap>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="Label_start" name="label_start">
+      <property name="maximumSize">
+       <size>
+        <width>290</width>
+        <height>290</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/tu/ALL-IN-ONE ICON/iconBKG.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="SP.qrc">:/tu/ALL-IN-ONE ICON/icon_start.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="Label_photo" name="label_photo">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/tu/ALL-IN-ONE ICON/iconBKG.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="SP.qrc">:/tu/ALL-IN-ONE ICON/icon_photo.png</pixmap>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QPushButton" name="browseReportBtn">
+      <property name="minimumSize">
+       <size>
+        <width>290</width>
+        <height>290</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>290</width>
+        <height>290</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>32</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/tu/ALL-IN-ONE ICON/iconBKG.png);
+background-color: transparent;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="SP.qrc">
+        <normaloff>:/tu/ALL-IN-ONE ICON/icon_browseReport.png</normaloff>:/tu/ALL-IN-ONE ICON/icon_browseReport.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>180</width>
+        <height>180</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="addReportBtn">
+      <property name="minimumSize">
+       <size>
+        <width>290</width>
+        <height>290</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>290</width>
+        <height>290</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>32</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/tu/ALL-IN-ONE ICON/iconBKG.png);
+background-color: transparent;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="SP.qrc">
+        <normaloff>:/tu/ALL-IN-ONE ICON/icon_addReport.png</normaloff>:/tu/ALL-IN-ONE ICON/icon_addReport.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>180</width>
+        <height>180</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="Label_system" name="label_system">
+      <property name="minimumSize">
+       <size>
+        <width>290</width>
+        <height>290</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>290</width>
+        <height>290</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/tu/ALL-IN-ONE ICON/iconBKG.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="SP.qrc">:/tu/ALL-IN-ONE ICON/icon_system.png</pixmap>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="nameBtnStart">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>330</y>
+     <width>290</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+border:none;
+background-color:transparent;
+border-image: none;</string>
+   </property>
+   <property name="text">
+    <string>Start</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="nameBtnPhoto">
+   <property name="geometry">
+    <rect>
+     <x>485</x>
+     <y>330</y>
+     <width>290</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+border:none;
+background-color:transparent;
+border-image: none;</string>
+   </property>
+   <property name="text">
+    <string>Photo</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="nameBtnVideo">
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>330</y>
+     <width>290</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+border:none;
+background-color:transparent;
+border-image: none;</string>
+   </property>
+   <property name="text">
+    <string>Video</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="nameBtnSysSet">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>660</y>
+     <width>290</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+border:none;
+background-color:transparent;
+border-image: none;</string>
+   </property>
+   <property name="text">
+    <string>System Set</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="nameBtnAdd">
+   <property name="geometry">
+    <rect>
+     <x>485</x>
+     <y>660</y>
+     <width>290</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+border:none;
+background-color:transparent;
+border-image: none;</string>
+   </property>
+   <property name="text">
+    <string>Add Report</string>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="nameBtnBrowse">
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>660</y>
+     <width>290</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+border:none;
+background-color:transparent;
+border-image: none;</string>
+   </property>
+   <property name="text">
+    <string>Browse Report</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="AW2" name="aw2">
+   <property name="geometry">
+    <rect>
+     <x>1210</x>
+     <y>220</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Label_start</class>
+   <extends>QLabel</extends>
+   <header>zhukuang.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Label_photo</class>
+   <extends>QLabel</extends>
+   <header>zhukuang.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Label_video</class>
+   <extends>QLabel</extends>
+   <header>zhukuang.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Label_system</class>
+   <extends>QLabel</extends>
+   <header>zhukuang.h</header>
+  </customwidget>
+  <customwidget>
+   <class>AW2</class>
+   <extends>QLabel</extends>
+   <header>zhukuang.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="SP.qrc"/>
+ </resources>
+ <connections/>
+</ui>

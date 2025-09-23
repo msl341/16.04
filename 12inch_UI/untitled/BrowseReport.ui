@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BrowseReport</class>
+ <widget class="QWidget" name="BrowseReport">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">border-image: url(:/tu/ALL-IN-ONE ICON/BKG.png);</string>
+  </property>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1280</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+	text-align: left;
+}
+</string>
+   </property>
+   <widget class="QWidget" name="page">
+    <widget class="QWidget" name="widgetB" native="true">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>30</y>
+       <width>1202</width>
+       <height>751</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: none;
+border:none;</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
+      </property>
+      <item>
+       <widget class="QWidget" name="widget" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+background-color: transparent;
+border:none;</string>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item alignment="Qt::AlignLeft">
+          <widget class="QLabel" name="labelBrowseReport">
+           <property name="minimumSize">
+            <size>
+             <width>250</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>250</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>18</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';</string>
+           </property>
+           <property name="text">
+            <string>Browse Report</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QWidget" name="widget_3" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>350</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>350</width>
+             <height>50</height>
+            </size>
+           </property>
+           <widget class="showKeyBoardLineEdit" name="searchInput">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>300</width>
+              <height>50</height>
+             </rect>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::ClickFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border:none;</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="searchBtn">
+            <property name="geometry">
+             <rect>
+              <x>300</x>
+              <y>0</y>
+              <width>50</width>
+              <height>50</height>
+             </rect>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+border:none;</string>
+            </property>
+            <property name="text">
+             <string>S</string>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="addReportBtn">
+           <property name="minimumSize">
+            <size>
+             <width>120</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>120</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: white;
+border:1px solid black;
+border-image: url(:/tu/ALL-IN-ONE ICON/BKG_long_small.png);</string>
+           </property>
+           <property name="text">
+            <string>add Report</string>
+           </property>
+           <property name="flat">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>30</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="backBtn">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: white;
+border:1px solid black;
+border-image: url(:/tu/ALL-IN-ONE ICON/BKG_long_small.png);</string>
+           </property>
+           <property name="text">
+            <string>Back</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_2" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(46, 52, 54);
+border-image: none;</string>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="labelName">
+           <property name="minimumSize">
+            <size>
+             <width>272</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>272</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';</string>
+           </property>
+           <property name="text">
+            <string>Name</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelAge">
+           <property name="maximumSize">
+            <size>
+             <width>150</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';</string>
+           </property>
+           <property name="text">
+            <string>Age</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelGender">
+           <property name="maximumSize">
+            <size>
+             <width>150</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';</string>
+           </property>
+           <property name="text">
+            <string>Gender</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelDate">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';</string>
+           </property>
+           <property name="text">
+            <string>Date</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="DraggableListWidget" name="listWidget">
+        <property name="minimumSize">
+         <size>
+          <width>1200</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QListWidget {
+	border:none;
+	border-image:none;
+	background-color: rgba(0, 0, 0, 0);
+	margin-top:5px;
+}
+
+QWidget{
+	border: none;
+	border-image:none;
+}
+
+QScrollBar:vertical {
+	background-color: transparent;
+	border-image:none;
+	border:none;
+	border-radius:5px;
+	width: 10px;
+	margin-top:0px;
+}
+
+QScrollBar::handle:vertical {
+	background-color: rgb(60,100,242);
+	border-image:none;
+	min-height: 20px;
+	border-radius: 5px;
+	border: none;
+}
+
+QScrollBar::handle:vertical:hover {
+	/*background-color: rgba(222,83,66,255);*/
+	border: none;
+	border-image:none;
+}
+
+QScrollBar::add-line:vertical {
+	border: none;
+	border-image:none;
+	background-color:transparent;
+}
+
+QScrollBar::sub-line:vertical {
+	border: none;
+	border-image:none;
+	background-color:transparent;
+}
+
+QScrollBar::add-page:vertical {
+	border-image:none;
+	background-color: rgb(80, 80, 80);  /* 深灰色線條 */
+	width: 2px;  /* 設置線條寬度 */
+	margin-left: 4px;  /* 使線條居中 */
+	margin-right: 4px;  /* 使線條居中 */
+	margin-bottom:5px;
+	border: none;
+}
+
+QScrollBar::sub-page:vertical{
+	border-image:none;
+	background-color: rgb(80, 80, 80);  /* 深灰色線條 */
+	width: 2px;  /* 設置線條寬度 */
+	margin-top:5px;
+	margin-left: 4px;  /* 使線條居中 */
+	margin-right: 4px;  /* 使線條居中 */
+	border: none;
+}</string>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="showDropIndicator" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::NoSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectItems</enum>
+        </property>
+        <property name="gridSize">
+         <size>
+          <width>1180</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="batchSize">
+         <number>100</number>
+        </property>
+        <property name="itemAlignment">
+         <set>Qt::AlignLeading</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_2">
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>150</y>
+       <width>500</width>
+       <height>500</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>32</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;
+color: white;
+border-image: none;</string>
+     </property>
+     <property name="text">
+      <string>Fail to Connect Database</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="backBtn_noDatabase">
+     <property name="geometry">
+      <rect>
+       <x>1110</x>
+       <y>710</y>
+       <width>130</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+color: black;
+border-image: none;</string>
+     </property>
+     <property name="text">
+      <string>back</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>showKeyBoardLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header location="global">addReport.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DraggableListWidget</class>
+   <extends>QListWidget</extends>
+   <header>mykey.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

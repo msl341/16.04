@@ -1,0 +1,124 @@
+<RCC>
+    <qresource prefix="/">
+        <file>tu/LED.png</file>
+        <file>tu/AE/AE5.png</file>
+        <file>tu/AE/AE4.png</file>
+        <file>tu/AE/AE3.png</file>
+        <file>tu/AE/AE2.png</file>
+        <file>tu/AE/AE1.png</file>
+        <file>tu/LED/LED1.png</file>
+        <file>tu/LED/LED0.png</file>
+        <file>tu/LED/LED4.png</file>
+        <file>tu/LED/LED3.png</file>
+        <file>tu/LED/LED2.png</file>
+        <file>sanping.qss</file>
+        <file>Chinese_t.ts</file>
+        <file>Chinese.ts</file>
+        <file>English.ts</file>
+        <file>tu/aemin.png</file>
+        <file>tu/awbmin.png</file>
+        <file>tu/handle.png</file>
+        <file>tu/groove.png</file>
+        <file>tu/LED/hostled3.png</file>
+        <file>tu/LED/hostled2.png</file>
+        <file>tu/LED/hostled1.png</file>
+        <file>tu/LED/hostled0.png</file>
+        <file>tu/LED/hostled4.png</file>
+        <file>Chinese_t.qm</file>
+        <file>Chinese.qm</file>
+        <file>English.qm</file>
+        <file>tu/Zoom/1.png</file>
+        <file>tu/Zoom/11.png</file>
+        <file>tu/Zoom/12.png</file>
+        <file>tu/Zoom/13.png</file>
+        <file>tu/Zoom/14.png</file>
+        <file>tu/Zoom/15.png</file>
+        <file>tu/Zoom/16.png</file>
+        <file>tu/Zoom/17.png</file>
+        <file>tu/Zoom/18.png</file>
+        <file>tu/Zoom/19.png</file>
+        <file>tu/Zoom/20.png</file>
+        <file>tu/Freeze/freeze.png</file>
+        <file>tu/Freeze/freezeF.png</file>
+        <file>tu/Rotate/rotate0.png</file>
+        <file>tu/Rotate/rotate1.png</file>
+        <file>tu/Rotate/rotate2.png</file>
+        <file>tu/Rotate/rotate3.png</file>
+        <file>tu/Rotate/rotate4.png</file>
+        <file>tu/Display/background.png</file>
+        <file>tu/Pump/pump0.png</file>
+        <file>tu/Pump/pump1.png</file>
+        <file>tu/Pump/pump2.png</file>
+        <file>tu/Photo/all.png</file>
+        <file>tu/Photo/allmode.png</file>
+        <file>tu/Photo/boundary.png</file>
+        <file>tu/Photo/cancelall.png</file>
+        <file>tu/Photo/cancelallmode.png</file>
+        <file>tu/Photo/delete.png</file>
+        <file>tu/Photo/left.png</file>
+        <file>tu/Photo/return.png</file>
+        <file>tu/Photo/right.png</file>
+        <file>tu/Photo/selectflag.png</file>
+        <file>tu/Photo/single.png</file>
+        <file>tu/Photo/singlemode.png</file>
+        <file>tu/Video/advance.png</file>
+        <file>tu/Video/pause.png</file>
+        <file>tu/Video/recoil.png</file>
+        <file>tu/Video/videoflag.png</file>
+        <file>tu/maininterface.png</file>
+        <file>tu/octagon.png</file>
+        <file>tu/rec.png</file>
+        <file>tu/recl.png</file>
+        <file>tu/startchecking.png</file>
+        <file>tu/square.png</file>
+        <file>tu/takephoto.png</file>
+        <file>tu/takephotol.png</file>
+        <file>tu/nofunc.png</file>
+        <file>tu/timeset.png</file>
+        <file>tu/format.png</file>
+        <file>tu/oval.png</file>
+        <file>tu/photoview.png</file>
+        <file>tu/pumpmin.png</file>
+        <file>tu/videoview.png</file>
+        <file>tu/AWB.png</file>
+        <file>tu/AWBl.png</file>
+        <file>tu/background.png</file>
+        <file>tu/languageset.png</file>
+        <file>tu/reset.png</file>
+        <file>tu/return.png</file>
+        <file>tu/systemset.png</file>
+        <file>tu/versioninfo.png</file>
+        <file>tu/warn.png</file>
+        <file>tu/circle.png</file>
+        <file>tu/ALL-IN-ONE ICON/BKG_long.png</file>
+        <file>tu/ALL-IN-ONE ICON/BKG_long_small.png</file>
+        <file>tu/ALL-IN-ONE ICON/icon_addReport.png</file>
+        <file>tu/ALL-IN-ONE ICON/icon_back.png</file>
+        <file>tu/ALL-IN-ONE ICON/iconBKG.png</file>
+        <file>tu/ALL-IN-ONE ICON/icon_browseReport.png</file>
+        <file>tu/ALL-IN-ONE ICON/icon_format.png</file>
+        <file>tu/ALL-IN-ONE ICON/icon_info.png</file>
+        <file>tu/ALL-IN-ONE ICON/icon_language.png</file>
+        <file>tu/ALL-IN-ONE ICON/icon_photo.png</file>
+        <file>tu/ALL-IN-ONE ICON/icon_reset.png</file>
+        <file>tu/ALL-IN-ONE ICON/icon_start.png</file>
+        <file>tu/ALL-IN-ONE ICON/icon_system.png</file>
+        <file>tu/ALL-IN-ONE ICON/icon_time.png</file>
+        <file>tu/ALL-IN-ONE ICON/icon_video.png</file>
+        <file>tu/ALL-IN-ONE ICON/BKG.png</file>
+        <file>VKeyboard.qml</file>
+        <file>tu/ALL-IN-ONE ICON/icon_move.png</file>
+        <file>tu/ALL-IN-ONE ICON/icon_move_jpg.jpg</file>
+        <file>tu/ALL-IN-ONE ICON/move.png</file>
+        <file>tu/ALL-IN-ONE ICON/move_screenShot.png</file>
+        <file>tu/ALL-IN-ONE ICON/move_gray.png</file>
+        <file>tu/battery_icon/battery1.png</file>
+        <file>tu/battery_icon/battery2.png</file>
+        <file>tu/battery_icon/battery3.png</file>
+        <file>tu/battery_icon/battery4.png</file>
+        <file>tu/battery_icon/charging1.png</file>
+        <file>tu/battery_icon/charging2.png</file>
+        <file>tu/battery_icon/charging3.png</file>
+        <file>tu/battery_icon/charging4.png</file>
+    </qresource>
+</RCC>

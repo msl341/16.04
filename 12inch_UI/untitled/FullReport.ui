@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FullReport</class>
+ <widget class="QWidget" name="FullReport">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1280</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QWidget" name="page">
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/tu/ALL-IN-ONE ICON/BKG.png);</string>
+    </property>
+    <widget class="QWidget" name="gridLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>1241</width>
+       <height>761</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item row="3" column="5" colspan="3">
+       <widget class="QLabel" name="Date">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>unknown</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="4" colspan="2">
+       <widget class="QLabel" name="Part">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>unknown</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="1" colspan="7">
+       <widget class="QLabel" name="Opinion">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border-top: 2px solid black;
+border-bottom: 2px solid black;</string>
+        </property>
+        <property name="text">
+         <string>none</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="labelGraphicviewLBKG">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+border-image:none;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="8">
+       <widget class="QLabel" name="ReportTitle">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>26</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-bottom: 2px solid black;
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border-image: none;</string>
+        </property>
+        <property name="text">
+         <string>Report</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="13" column="0" colspan="8">
+       <widget class="QWidget" name="widget" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+background-color: rgb(255, 255, 255);</string>
+        </property>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>980</x>
+           <y>0</y>
+           <width>261</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <property name="spacing">
+           <number>50</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="editBtn">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>35</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>35</height>
+             </size>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border:none;
+color: rgb(255, 255, 255);
+font: 13pt &quot;Ubuntu&quot;;
+background-color: rgb(136, 138, 133);
+border-radius:10px;</string>
+            </property>
+            <property name="text">
+             <string>Edit</string>
+            </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="backBtn">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>35</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>35</height>
+             </size>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border:none;
+color: rgb(255, 255, 255);
+font: 13pt &quot;Ubuntu&quot;;
+background-color: rgb(136, 138, 133);
+border-radius:10px;
+</string>
+            </property>
+            <property name="text">
+             <string>Back</string>
+            </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="labelName">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>     Name :</string>
+        </property>
+        <property name="margin">
+         <number>0</number>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="6">
+       <widget class="QLabel" name="labelAge">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>Age :</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="labelID">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>     ID :</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1" colspan="6">
+       <widget class="DraggableGraphicsView" name="graphicsView">
+        <property name="minimumSize">
+         <size>
+          <width>920</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGraphicsView {
+	border:none;
+	border-image:none;
+	background-color:rgb(255, 255, 255);
+}
+
+QWidget{
+	border: none;
+	border-image:none;
+	background-color:rgb(255, 255, 255);
+}
+
+QScrollBar:vertical {
+	background-color:rgb(255, 255, 255);
+	border:none;
+	border-radius:5px;
+	width: 10px;
+	margin-top:0px;
+}
+
+QScrollBar::handle:vertical {
+	background-color: rgb(60,100,242);
+	min-height: 20px;
+	border-radius: 5px;
+	border: none;
+}
+
+QScrollBar::handle:vertical:hover {
+	/*background-color: rgba(222,83,66,255);*/
+	border: none;
+}
+
+QScrollBar::add-line:vertical {
+	border: none;
+	border-image:none;
+	background-color:rgb(255, 255, 255);
+}
+
+QScrollBar::sub-line:vertical {
+	border: none;
+	border-image:none;
+	background-color:rgb(255, 255, 255);
+}
+
+QScrollBar::add-page:vertical {
+	border-image:none;
+	background-color: rgb(80, 80, 80);  /* 深灰色線條 */
+	width: 3px;  /* 設置線條寬度 */
+	margin-left: 4px;  /* 使線條居中 */
+	margin-right: 4px;  /* 使線條居中 */
+	margin-bottom:10px;
+	border: none;
+}
+
+QScrollBar::sub-page:vertical{
+	border-image:none;
+	background-color: rgb(80, 80, 80);  /* 深灰色線條 */
+	width: 3px;  /* 設置線條寬度 */
+	margin-top:10px;
+	margin-left: 4px;  /* 使線條居中 */
+	margin-right: 4px;  /* 使線條居中 */
+	border: none;
+}</string>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAsNeeded</enum>
+        </property>
+        <property name="sceneRect">
+         <rectf>
+          <x>0.000000000000000</x>
+          <y>0.000000000000000</y>
+          <width>0.000000000000000</width>
+          <height>0.000000000000000</height>
+         </rectf>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="7">
+       <widget class="QLabel" name="Age">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>unknown</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="1" colspan="7">
+       <widget class="QLabel" name="Result">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border-top: 2px solid black;</string>
+        </property>
+        <property name="text">
+         <string>none</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="0">
+       <widget class="QLabel" name="labelResult">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border-top: 2px solid black;</string>
+        </property>
+        <property name="text">
+         <string>     Result :</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="0">
+       <widget class="QLabel" name="labelOpinion">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border-top: 2px solid black;
+border-bottom: 2px solid black;</string>
+        </property>
+        <property name="text">
+         <string>     Opinion :</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="7">
+       <widget class="QLabel" name="labelGraphicviewRBKG">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+border-image:none;
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QLabel" name="labelSituation">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border-top: 2px solid black;</string>
+        </property>
+        <property name="text">
+         <string>     Situation :</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="1" colspan="7">
+       <widget class="QLabel" name="Situation">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border-top: 2px solid black;</string>
+        </property>
+        <property name="text">
+         <string>none</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="QLabel" name="labelPart">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>Part :</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="4">
+       <widget class="QLabel" name="labelDate">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>Date :</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0" colspan="8">
+       <widget class="QLabel" name="labelPhotos">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border-top: 2px solid black;</string>
+        </property>
+        <property name="text">
+         <string>    Photos :</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="labelBirth">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>     Birth :</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QLabel" name="labelGender">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>Gender :</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4" colspan="2">
+       <widget class="QLabel" name="Gender">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>unknown</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="6">
+       <widget class="QLabel" name="labelDoctor">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>Doctor :</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QLabel" name="Name">
+        <property name="minimumSize">
+         <size>
+          <width>220</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>unknown</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" colspan="3">
+       <widget class="QLabel" name="Birth">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>unknown</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="7">
+       <widget class="QLabel" name="Doctor">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>unknown</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" colspan="2">
+       <widget class="QLabel" name="ID">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>unknown</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="0">
+       <widget class="QLabel" name="labelDescribe">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border-top: 2px solid black;</string>
+        </property>
+        <property name="text">
+         <string>     Describe :</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="1" colspan="7">
+       <widget class="QLabel" name="Describe">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: none;
+qproperty-alignment: 'AlignLeft';
+qproperty-alignment: 'AlignVCenter';
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border-top: 2px solid black;</string>
+        </property>
+        <property name="text">
+         <string>none</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_2"/>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DraggableGraphicsView</class>
+   <extends>QGraphicsView</extends>
+   <header>mykey.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
