@@ -336,18 +336,6 @@ static ST_RGN_Osd_T g_stRgnOsd;
 
 
 
-int iVideoWidth = 1280;
-int iVideoHeight = 720;
-int iVideoWidth_Scl = 1280;
-int iVideoHeight_Scl = 720;
-int iDispWidth = 1280;
-int iDispHeight = 800;
-int iDispShowX = 240;
-int iDispShowY = 0;
-int iDispShowWidth = 800;
-int iDispShowHeight = 800;
-
-
 int g_i_Usb_bright = 8;
 
 
@@ -419,8 +407,7 @@ static MI_WLAN_ConnectParam_t g_stConnectParam[] = {
 MI_S32 St_DispModuleDeinit(Device_Handle_t *video_dev);
 MI_S32 St_SclModuleDeinit(Device_Handle_t *video_dev);
 
-//设置视频和显示数据
-static MI_S32 set_video_disp(int iFlag);
+
 
 
 
@@ -1150,8 +1137,8 @@ static MI_S32 St_SclModuleInit(Device_Handle_t *video_dev)
 
 	if(usb_open_flag == false )
 	{
-		video_dev->width = iVideoWidth;
-		video_dev->height = iVideoHeight;
+		video_dev->width = 1280;
+		video_dev->height = 800;
 	}
 
     stSysChnPort.eModId = E_MI_MODULE_ID_SCL;
@@ -1161,12 +1148,12 @@ static MI_S32 St_SclModuleInit(Device_Handle_t *video_dev)
     stSclDevAttr.u32NeedUseHWOutPortMask = E_MI_SCL_HWSCL0 | E_MI_SCL_HWSCL1 | E_MI_SCL_HWSCL2 | E_MI_SCL_HWSCL3 ;
     stSclOutputParam.stSCLOutCropRect.u16X = 0;
     stSclOutputParam.stSCLOutCropRect.u16Y = 0;
-    stSclOutputParam.stSCLOutCropRect.u16Width = iVideoWidth_Scl;
-    stSclOutputParam.stSCLOutCropRect.u16Height = iVideoHeight_Scl;
+    stSclOutputParam.stSCLOutCropRect.u16Width = 0;
+    stSclOutputParam.stSCLOutCropRect.u16Height = 0;
 	
 
-    stSclOutputParam.stSCLOutputSize.u16Width = iDispShowWidth;
-    stSclOutputParam.stSCLOutputSize.u16Height = iDispShowHeight;
+    stSclOutputParam.stSCLOutputSize.u16Width = 1280;
+    stSclOutputParam.stSCLOutputSize.u16Height = 800;
 	
 	
     stSclOutputParam.bMirror = false;
@@ -1190,8 +1177,8 @@ static MI_S32 St_SclModuleInit(Device_Handle_t *video_dev)
     memset(&stSclChnParam, 0x0, sizeof(MI_SCL_ChnParam_t));
     memset(&stSclOutputParam, 0x0, sizeof(MI_SCL_OutPortParam_t));
 
-	panel_width = iDispWidth;
-	panel_height = iDispHeight;
+	panel_width = 1280;
+	panel_height = 800;
 
 
 	if(scl3_width == 0 )
@@ -1314,8 +1301,8 @@ static MI_S32 St_SclModuleInitTest(Device_Handle_t *video_dev)
     ExecFunc(MI_SCL_EnableOutputPort(SCL_DEV_ID, SCL_CHN_ID, SCL_PORT_ID), MI_SUCCESS);
 
 	memset(&stSclOutputParam, 0x0, sizeof(MI_SCL_OutPortParam_t));
-	panel_width = iDispWidth;
-	panel_height = iDispHeight;
+	panel_width = 1280;
+	panel_height = 800;
 	if(video_dev->width > panel_width)
 	{
 		stSclOutputParam.stSCLOutCropRect.u16X = (video_dev->width - panel_width)/2;
@@ -1357,8 +1344,8 @@ static MI_S32 St_JpdModuleInit(Device_Handle_t *video_dev)
 
 	if(usb_open_flag == false )
 	{
-		video_dev->width = iVideoWidth;
-		video_dev->height = iVideoHeight;
+		video_dev->width = 1280;
+		video_dev->height = 720;
 	}
 
     stSysChnPort.eModId = E_MI_MODULE_ID_JPD;
@@ -1393,8 +1380,8 @@ static MI_S32 St_VdecModuleInit(Device_Handle_t *video_dev)
 
 	if(usb_open_flag == false)
 	{
-		video_dev->width = iVideoWidth;
-		video_dev->height = iVideoHeight;
+		video_dev->width = 1280;
+		video_dev->height = 720;
 	}
 
     stSysChnPort.eModId = E_MI_MODULE_ID_VDEC;
@@ -1407,11 +1394,11 @@ static MI_S32 St_VdecModuleInit(Device_Handle_t *video_dev)
     //stVdecChnAttr.stVdecVideoAttr.stErrHandlePolicy.bUseCusPolicy = false;
     stVdecChnAttr.stVdecVideoAttr.u32RefFrameNum = 1;
     stVdecChnAttr.u32BufSize = 1024*1024;
-    stVdecChnAttr.u32PicHeight = iVideoHeight;
-    stVdecChnAttr.u32PicWidth = iVideoWidth;
+    stVdecChnAttr.u32PicHeight = 720;
+    stVdecChnAttr.u32PicWidth = 1280;
     stVdecChnAttr.u32Priority = 0;
-    stVdecOutputPortAttr.u16Height = iVideoHeight;
-    stVdecOutputPortAttr.u16Width = iVideoWidth;
+    stVdecOutputPortAttr.u16Height = 720;
+    stVdecOutputPortAttr.u16Width = 1280;
     //stVdecChnAttr.stVdecVideoAttr.bDisableLowLatency = FALSE;
 
     //ExecFunc(MI_VDEC_CreateDev(VDEC_DEV_ID, &stVdecInitParam), MI_SUCCESS);
@@ -1460,7 +1447,7 @@ static MI_S32 St_fastModuleInit(Device_Handle_t *video_dev)
 
 
 
-/*static MI_S32 St_DispModuleInitBak(Device_Handle_t *video_dev)
+static MI_S32 St_DispModuleInitBak(Device_Handle_t *video_dev)
 {
     MI_DISP_PubAttr_t stDispPubAttr;
     MI_DISP_VideoLayerAttr_t stDispLayerAttr;
@@ -1540,7 +1527,7 @@ static MI_S32 St_fastModuleInit(Device_Handle_t *video_dev)
 	
 	
     return MI_SUCCESS;
-}*/
+}
 
 
 static MI_S32 St_DispModuleInit(Device_Handle_t *video_dev)
@@ -1551,8 +1538,8 @@ static MI_S32 St_DispModuleInit(Device_Handle_t *video_dev)
 
 	if(usb_open_flag == false )
 	{
-		video_dev->width = iVideoWidth;
-		video_dev->height = iVideoHeight;
+		video_dev->width = 1280;
+		video_dev->height = 800;
 	}
 	system("echo 0 >/sys/devices/soc0/soc/1f203200.pwm/pwm/pwmchip0/pwm10/duty_cycle");
 	
@@ -1563,18 +1550,18 @@ static MI_S32 St_DispModuleInit(Device_Handle_t *video_dev)
     stDispPubAttr.eIntfType = E_MI_DISP_INTF_MIPIDSI;
     stDispPubAttr.u32BgColor = YUYV_BLACK;
     stDispLayerAttr.ePixFormat = E_MI_SYS_PIXEL_FRAME_YUV_SEMIPLANAR_420;
-    stDispLayerAttr.stVidLayerDispWin.u16Height = iDispHeight;//768;
-    stDispLayerAttr.stVidLayerDispWin.u16Width = iDispWidth;//1024;
+    stDispLayerAttr.stVidLayerDispWin.u16Height = 800;//768;
+    stDispLayerAttr.stVidLayerDispWin.u16Width = 1280;//1024;
     stDispLayerAttr.stVidLayerDispWin.u16X = 0;
     stDispLayerAttr.stVidLayerDispWin.u16Y = 0;
-    stDispLayerAttr.stVidLayerSize.u16Height = iDispHeight;//768;
-    stDispLayerAttr.stVidLayerSize.u16Width = iDispWidth;//1024
-    stDispInputPortAttr.stDispWin.u16Height = iDispShowHeight;
-    stDispInputPortAttr.stDispWin.u16Width = iDispShowWidth;
-    stDispInputPortAttr.stDispWin.u16X = iDispShowX;
-    stDispInputPortAttr.stDispWin.u16Y = iDispShowY;
-    stDispInputPortAttr.u16SrcHeight = iDispShowHeight;
-    stDispInputPortAttr.u16SrcWidth = iDispShowWidth;
+    stDispLayerAttr.stVidLayerSize.u16Height = 800;//768;
+    stDispLayerAttr.stVidLayerSize.u16Width = 1280;//1024
+    stDispInputPortAttr.stDispWin.u16Height = panel_height;
+    stDispInputPortAttr.stDispWin.u16Width = panel_width;
+    stDispInputPortAttr.stDispWin.u16X = 0;
+    stDispInputPortAttr.stDispWin.u16Y = 0;
+    stDispInputPortAttr.u16SrcHeight = panel_width;
+    stDispInputPortAttr.u16SrcWidth = panel_height;
 
 
     ExecFunc(MI_DISP_SetPubAttr(DISP_DEV_ID, &stDispPubAttr), MI_SUCCESS);
@@ -1598,8 +1585,8 @@ static MI_S32 St_DispModuleInit(Device_Handle_t *video_dev)
     stDispLayerAttr.stVidLayerDispWin.u16Width = SCL_SMALL_WIDTH;//1024;
     stDispLayerAttr.stVidLayerDispWin.u16X = 0;
     stDispLayerAttr.stVidLayerDispWin.u16Y = 0;
-    stDispLayerAttr.stVidLayerSize.u16Height = iDispHeight;//768;
-    stDispLayerAttr.stVidLayerSize.u16Width = iDispWidth;//1024
+    stDispLayerAttr.stVidLayerSize.u16Height = 800;//768;
+    stDispLayerAttr.stVidLayerSize.u16Width = 1280;//1024
     stDispInputPortAttr.stDispWin.u16Height = SCL_SMALL_HEIGHT;//panel_height;
     stDispInputPortAttr.stDispWin.u16Width = SCL_SMALL_WIDTH;//panel_width;
     stDispInputPortAttr.stDispWin.u16X = 50;
@@ -1666,6 +1653,7 @@ MI_S32 St_HideLayerForMain()
 	return MI_SUCCESS;
 }
 
+
 //显示主视频
 MI_S32 St_ShowLayerForMain()
 {
@@ -1699,15 +1687,19 @@ MI_S32 St_ShowLayerForSmall()
 MI_S32 St_ResizeLayer(unsigned char iFlag)
 {
 //	return MI_SUCCESS;
-	//xz
+    //usleep(3000*1000);
     STCHECKRESULT(MI_DISP_ClearInputPortBuffer(DISP_LAYER_ID, 0, true));
     STCHECKRESULT(MI_DISP_ClearInputPortBuffer(1,0, true));
-
+	//xz
+     //usleep(3000*1000);
+      printf("19191919191919191919\n");
 	ExecFunc(MI_DISP_DisableInputPort(DISP_LAYER_ID, 0), MI_SUCCESS);
+
 	// ExecFunc(MI_DISP_DisableVideoLayer(DISP_LAYER_ID), MI_SUCCESS);
 	// ExecFunc(MI_DISP_UnBindVideoLayer(DISP_LAYER_ID, DISP_DEV_ID), MI_SUCCESS);
 	
 	ExecFunc(MI_DISP_DisableInputPort(1, 0), MI_SUCCESS);
+
 	// ExecFunc(MI_DISP_DisableVideoLayer(1), MI_SUCCESS);
 	// ExecFunc(MI_DISP_UnBindVideoLayer(1, DISP_DEV_ID), MI_SUCCESS);
 
@@ -1727,18 +1719,18 @@ MI_S32 St_ResizeLayer(unsigned char iFlag)
 			stDispPubAttr.eIntfType = E_MI_DISP_INTF_MIPIDSI;
 			stDispPubAttr.u32BgColor = YUYV_BLACK;
 			stDispLayerAttr.ePixFormat = E_MI_SYS_PIXEL_FRAME_YUV_SEMIPLANAR_420;
-			stDispLayerAttr.stVidLayerDispWin.u16Height = iDispHeight;//768;
-			stDispLayerAttr.stVidLayerDispWin.u16Width = iDispWidth;//1024;
+			stDispLayerAttr.stVidLayerDispWin.u16Height = 800;//768;
+			stDispLayerAttr.stVidLayerDispWin.u16Width = 1280;//1024;
 			stDispLayerAttr.stVidLayerDispWin.u16X = 0;
 			stDispLayerAttr.stVidLayerDispWin.u16Y = 0;
-			stDispLayerAttr.stVidLayerSize.u16Height = iDispHeight;//768;
-			stDispLayerAttr.stVidLayerSize.u16Width = iDispWidth;//1024
-			stDispInputPortAttr.stDispWin.u16Height = iDispShowHeight;
-			stDispInputPortAttr.stDispWin.u16Width = iDispShowWidth;
-			stDispInputPortAttr.stDispWin.u16X = iDispShowX;
-			stDispInputPortAttr.stDispWin.u16Y = iDispShowY;
-			stDispInputPortAttr.u16SrcHeight = iDispShowHeight;
-			stDispInputPortAttr.u16SrcWidth = iDispShowWidth;
+			stDispLayerAttr.stVidLayerSize.u16Height = 800;//768;
+			stDispLayerAttr.stVidLayerSize.u16Width = 1280;//1024
+			stDispInputPortAttr.stDispWin.u16Height = 800;//panel_height;
+			stDispInputPortAttr.stDispWin.u16Width = 1280;//panel_width;
+			stDispInputPortAttr.stDispWin.u16X = 0;
+			stDispInputPortAttr.stDispWin.u16Y = 0;
+			stDispInputPortAttr.u16SrcHeight = 800;//panel_width;
+			stDispInputPortAttr.u16SrcWidth = 1280;//panel_height;
 
 
 			// ExecFunc(MI_DISP_SetPubAttr(DISP_DEV_ID, &stDispPubAttr), MI_SUCCESS);
@@ -1746,6 +1738,7 @@ MI_S32 St_ResizeLayer(unsigned char iFlag)
 			// ExecFunc(MI_DISP_BindVideoLayer(DISP_LAYER_ID,DISP_DEV_ID), MI_SUCCESS);
 			// ExecFunc(MI_DISP_SetVideoLayerAttr(DISP_LAYER_ID, &stDispLayerAttr), MI_SUCCESS);
 			// ExecFunc(MI_DISP_EnableVideoLayer(DISP_LAYER_ID), MI_SUCCESS);
+
 			ExecFunc(MI_DISP_SetInputPortAttr(DISP_LAYER_ID, 0, &stDispInputPortAttr), MI_SUCCESS);
 			ExecFunc(MI_DISP_EnableInputPort(DISP_LAYER_ID, 0), MI_SUCCESS);
 			ExecFunc(MI_DISP_SetInputPortSyncMode(DISP_LAYER_ID, 0, E_MI_DISP_SYNC_MODE_FREE_RUN), MI_SUCCESS);
@@ -1758,19 +1751,21 @@ MI_S32 St_ResizeLayer(unsigned char iFlag)
 			stDispPubAttr.eIntfType = E_MI_DISP_INTF_MIPIDSI;
 			stDispPubAttr.u32BgColor = YUYV_BLACK;
 			stDispLayerAttr.ePixFormat = E_MI_SYS_PIXEL_FRAME_YUV_SEMIPLANAR_420;
-			stDispLayerAttr.stVidLayerDispWin.u16Height = iDispHeight;//768;
-			stDispLayerAttr.stVidLayerDispWin.u16Width = iDispWidth;//1024;
+			stDispLayerAttr.stVidLayerDispWin.u16Height = 800;//768;
+			stDispLayerAttr.stVidLayerDispWin.u16Width = 1280;//1024;
 			stDispLayerAttr.stVidLayerDispWin.u16X = 0;
 			stDispLayerAttr.stVidLayerDispWin.u16Y = 0;
-			stDispLayerAttr.stVidLayerSize.u16Height = iDispHeight;//768;
-			stDispLayerAttr.stVidLayerSize.u16Width = iDispWidth;//1024
+			stDispLayerAttr.stVidLayerSize.u16Height = 800;//768;
+			stDispLayerAttr.stVidLayerSize.u16Width = 1280;//1024
 
-			stDispInputPortAttr.stDispWin.u16Height = iDispHeight;
-			stDispInputPortAttr.stDispWin.u16Width = iDispWidth;
+			stDispInputPortAttr.stDispWin.u16Height = 800;//panel_height;
+			stDispInputPortAttr.stDispWin.u16Width = 1280;//panel_width;
+
 			stDispInputPortAttr.stDispWin.u16X = 0;
 			stDispInputPortAttr.stDispWin.u16Y = 0;
-			stDispInputPortAttr.u16SrcHeight = iDispHeight;
-			stDispInputPortAttr.u16SrcWidth = iDispWidth;
+
+			stDispInputPortAttr.u16SrcHeight = 800;//panel_width;
+			stDispInputPortAttr.u16SrcWidth = 1280;//panel_height;
 
 
 			// ExecFunc(MI_DISP_SetPubAttr(DISP_DEV_ID, &stDispPubAttr), MI_SUCCESS);
@@ -1778,6 +1773,7 @@ MI_S32 St_ResizeLayer(unsigned char iFlag)
 			// ExecFunc(MI_DISP_BindVideoLayer(1,DISP_DEV_ID), MI_SUCCESS);
 			// ExecFunc(MI_DISP_SetVideoLayerAttr(1, &stDispLayerAttr), MI_SUCCESS);
 			// ExecFunc(MI_DISP_EnableVideoLayer(1), MI_SUCCESS);
+
 			ExecFunc(MI_DISP_SetInputPortAttr(1, 0, &stDispInputPortAttr), MI_SUCCESS);
 			ExecFunc(MI_DISP_EnableInputPort(1, 0), MI_SUCCESS);
 			ExecFunc(MI_DISP_SetInputPortSyncMode(1, 0, E_MI_DISP_SYNC_MODE_FREE_RUN), MI_SUCCESS);	
@@ -1795,18 +1791,18 @@ MI_S32 St_ResizeLayer(unsigned char iFlag)
 			stDispPubAttr.eIntfType = E_MI_DISP_INTF_MIPIDSI;
 			stDispPubAttr.u32BgColor = YUYV_BLACK;
 			stDispLayerAttr.ePixFormat = E_MI_SYS_PIXEL_FRAME_YUV_SEMIPLANAR_420;
-			stDispLayerAttr.stVidLayerDispWin.u16Height = iDispHeight;//768;
-			stDispLayerAttr.stVidLayerDispWin.u16Width = iDispWidth;//1024;
+			stDispLayerAttr.stVidLayerDispWin.u16Height = 800;//768;
+			stDispLayerAttr.stVidLayerDispWin.u16Width = 1280;//1024;
 			stDispLayerAttr.stVidLayerDispWin.u16X = 0;
 			stDispLayerAttr.stVidLayerDispWin.u16Y = 0;
-			stDispLayerAttr.stVidLayerSize.u16Height = iDispHeight;//768;
-			stDispLayerAttr.stVidLayerSize.u16Width = iDispWidth;//1024
-			stDispInputPortAttr.stDispWin.u16Height = iDispShowHeight;
-			stDispInputPortAttr.stDispWin.u16Width = iDispShowWidth;
-			stDispInputPortAttr.stDispWin.u16X = iDispShowX;
-			stDispInputPortAttr.stDispWin.u16Y = iDispShowY;
-			stDispInputPortAttr.u16SrcHeight = iDispShowHeight;
-			stDispInputPortAttr.u16SrcWidth = iDispShowWidth;
+			stDispLayerAttr.stVidLayerSize.u16Height = 800;//768;
+			stDispLayerAttr.stVidLayerSize.u16Width = 1280;//1024
+			stDispInputPortAttr.stDispWin.u16Height = 800;//panel_height;
+			stDispInputPortAttr.stDispWin.u16Width = 1280;//panel_width;
+			stDispInputPortAttr.stDispWin.u16X = 0;
+			stDispInputPortAttr.stDispWin.u16Y = 0;
+			stDispInputPortAttr.u16SrcHeight = 800;//panel_width;
+			stDispInputPortAttr.u16SrcWidth = 1280;//panel_height;
 
 
 			// ExecFunc(MI_DISP_SetPubAttr(DISP_DEV_ID, &stDispPubAttr), MI_SUCCESS);
@@ -1814,6 +1810,7 @@ MI_S32 St_ResizeLayer(unsigned char iFlag)
 			// ExecFunc(MI_DISP_BindVideoLayer(DISP_LAYER_ID,DISP_DEV_ID), MI_SUCCESS);
 			// ExecFunc(MI_DISP_SetVideoLayerAttr(DISP_LAYER_ID, &stDispLayerAttr), MI_SUCCESS);
 			// ExecFunc(MI_DISP_EnableVideoLayer(DISP_LAYER_ID), MI_SUCCESS);
+
 			ExecFunc(MI_DISP_SetInputPortAttr(DISP_LAYER_ID, 0, &stDispInputPortAttr), MI_SUCCESS);
 			ExecFunc(MI_DISP_EnableInputPort(DISP_LAYER_ID, 0), MI_SUCCESS);
 			ExecFunc(MI_DISP_SetInputPortSyncMode(DISP_LAYER_ID, 0, E_MI_DISP_SYNC_MODE_FREE_RUN), MI_SUCCESS);
@@ -1844,6 +1841,7 @@ MI_S32 St_ResizeLayer(unsigned char iFlag)
 			// ExecFunc(MI_DISP_BindVideoLayer(1,DISP_DEV_ID), MI_SUCCESS);
 			// ExecFunc(MI_DISP_SetVideoLayerAttr(1, &stDispLayerAttr), MI_SUCCESS);
 			// ExecFunc(MI_DISP_EnableVideoLayer(1), MI_SUCCESS);
+
 			ExecFunc(MI_DISP_SetInputPortAttr(1, 0, &stDispInputPortAttr), MI_SUCCESS);
 			ExecFunc(MI_DISP_EnableInputPort(1, 0), MI_SUCCESS);
 			ExecFunc(MI_DISP_SetInputPortSyncMode(1, 0, E_MI_DISP_SYNC_MODE_FREE_RUN), MI_SUCCESS);	
@@ -1972,8 +1970,6 @@ void *ST_UpdateRgnOsdProcExt(void *args)
 
 static MI_S32 St_VencModuleInit(Device_Handle_t *video_dev)
 {
-	int iTempWidth,iTempHeight;
-	
 	MI_S32 s32Ret;
 
     MI_VENC_DEV VeDev = MI_VENC_DEV_ID_H264_H265_0;
@@ -1982,31 +1978,20 @@ static MI_S32 St_VencModuleInit(Device_Handle_t *video_dev)
 
     MI_VENC_ChnAttr_t stAttr;
 
-	/*if(video_dev->width == 0 )
+	if(video_dev->width == 0 )
 	{
-		video_dev->width = iVideoWidth;
-		video_dev->height = iVideoHeight;
-	}*/
-	
-    if (iVideoWidth % 8 > 0)
-		iTempWidth = (iVideoWidth / 8 + 1) * 8;
-	else
-		iTempWidth = iVideoWidth;
-
-    if (iVideoHeight % 8 > 0)
-		iTempHeight = (iVideoHeight / 8 + 1) * 8;
-	else
-		iTempHeight = iVideoHeight;
-
+		video_dev->width = 1280;
+		video_dev->height = 720;
+	}
 
     /*set h264 chnnel video encode attribute*/
 	memset(&stAttr, 0, sizeof(MI_VENC_ChnAttr_t));
 
     stAttr.stVeAttr.eType = E_MI_VENC_MODTYPE_H264E;
 
-    stAttr.stVeAttr.stAttrH264e.u32PicWidth = iTempWidth;
+    stAttr.stVeAttr.stAttrH264e.u32PicWidth = video_dev->width;
 
-    stAttr.stVeAttr.stAttrH264e.u32PicHeight = iTempHeight;
+    stAttr.stVeAttr.stAttrH264e.u32PicHeight = video_dev->height;
 
     stAttr.stVeAttr.stAttrH264e.u32MaxPicWidth = 3840;
 
@@ -2566,8 +2551,8 @@ MI_S32 St_BaseInit(Device_Handle_t *video_dev)
 	stWbcSource.u32SourceId = 0;
 	MI_DISP_SetWBCSource(0, &stWbcSource);
 
-	stWbcAttr.stTargetSize.u32Width = iDispWidth;
-	stWbcAttr.stTargetSize.u32Height = iDispHeight;
+	stWbcAttr.stTargetSize.u32Width = 1280;
+	stWbcAttr.stTargetSize.u32Height = 800;
 	stWbcAttr.ePixFormat = E_MI_SYS_PIXEL_FRAME_YUV_SEMIPLANAR_420;
 	MI_DISP_SetWBCAttr(0, &stWbcAttr);
 	MI_DISP_EnableWBC(0);
@@ -4501,13 +4486,13 @@ char change_BaseModuleInit(Device_Handle_t *video_dev)
 	*/
 	
 //	change_scl_resolution(video_dev->width,video_dev->height,SCL_DEV_ID, SCL_CHN_ID, 1);//panel
-	change_scl_resolution(iDispWidth,iDispHeight,SCL_DEV_ID, SCL_CHN_ID, 1);//panel
+	change_scl_resolution(1280,800,SCL_DEV_ID, SCL_CHN_ID, 1);//panel
 
 
 	MI_SCL_OutPortParam_t stSCLOutPortParam;
 	
-	/*int iWidth = 1280;
-	int iHeight = 800;*/
+	int iWidth = 1280;
+	int iHeight = 800;
 
 
     memset(&stSCLOutPortParam, 0x0, sizeof(MI_SCL_OutPortParam_t));
@@ -4516,13 +4501,15 @@ char change_BaseModuleInit(Device_Handle_t *video_dev)
 	
 	stSCLOutPortParam.stSCLOutCropRect.u16X = 0;//(video_dev->width - iWidth)/2;
     stSCLOutPortParam.stSCLOutCropRect.u16Y = 0;//(video_dev->height - iHeight)/2;
-	stSCLOutPortParam.stSCLOutCropRect.u16Width = iVideoWidth_Scl;//iWidth;
-    stSCLOutPortParam.stSCLOutCropRect.u16Height = iVideoHeight_Scl;//iWidth;
+	stSCLOutPortParam.stSCLOutCropRect.u16Width = 0;//iWidth;
+    stSCLOutPortParam.stSCLOutCropRect.u16Height = 0;//iWidth;
 	
-    stSCLOutPortParam.stSCLOutputSize.u16Width = iDispShowWidth;
-    stSCLOutPortParam.stSCLOutputSize.u16Height = iDispShowHeight;
+    stSCLOutPortParam.stSCLOutputSize.u16Width = 1280;
+    stSCLOutPortParam.stSCLOutputSize.u16Height = 800;
 	MI_SCL_SetOutputPortParam(SCL_DEV_ID, SCL_CHN_ID, SCL_PORT_ID, &stSCLOutPortParam);
     MI_SCL_EnableOutputPort(SCL_DEV_ID, SCL_CHN_ID, SCL_PORT_ID);
+
+
 
     //modify 20240204
 	memset(&stSCLOutPortParam, 0x0, sizeof(MI_SCL_OutPortParam_t));
@@ -4530,8 +4517,8 @@ char change_BaseModuleInit(Device_Handle_t *video_dev)
     stSCLOutPortParam.stSCLOutCropRect.u16Y = (video_dev->height - panel_height)/2;
 	stSCLOutPortParam.stSCLOutCropRect.u16Width = panel_width;
     stSCLOutPortParam.stSCLOutCropRect.u16Height = panel_width;
-    stSCLOutPortParam.stSCLOutputSize.u16Width = iDispWidth;//video_dev->width;//480
-    stSCLOutPortParam.stSCLOutputSize.u16Height = iDispHeight;//video_dev->height;//480
+    stSCLOutPortParam.stSCLOutputSize.u16Width = 1280;//video_dev->width;//480
+    stSCLOutPortParam.stSCLOutputSize.u16Height = 800;//video_dev->height;//480
     stSCLOutPortParam.ePixelFormat = E_MI_SYS_PIXEL_FRAME_YUV_SEMIPLANAR_420;
 	ExecFunc(MI_SCL_SetOutputPortParam(SCL_DEV_ID, SCL_CHN_ID, 1, &stSCLOutPortParam), MI_SUCCESS);
     ExecFunc(MI_SCL_EnableOutputPort(SCL_DEV_ID, SCL_CHN_ID, 1), MI_SUCCESS);
@@ -4564,18 +4551,18 @@ char change_BaseModuleInit(Device_Handle_t *video_dev)
     stDispPubAttr.eIntfType = E_MI_DISP_INTF_MIPIDSI;
     stDispPubAttr.u32BgColor = YUYV_BLACK;
     stDispLayerAttr.ePixFormat = E_MI_SYS_PIXEL_FRAME_YUV_SEMIPLANAR_420;
-    stDispLayerAttr.stVidLayerDispWin.u16Height = iDispHeight;
-    stDispLayerAttr.stVidLayerDispWin.u16Width = iDispWidth;
+    stDispLayerAttr.stVidLayerDispWin.u16Height = 800;
+    stDispLayerAttr.stVidLayerDispWin.u16Width = 1280;
     stDispLayerAttr.stVidLayerDispWin.u16X = 0;
     stDispLayerAttr.stVidLayerDispWin.u16Y = 0;
-    stDispLayerAttr.stVidLayerSize.u16Height = iDispHeight;
-    stDispLayerAttr.stVidLayerSize.u16Width = iDispWidth;
-    stDispInputPortAttr.stDispWin.u16Height = iDispShowHeight;
-    stDispInputPortAttr.stDispWin.u16Width = iDispShowWidth;
-    stDispInputPortAttr.stDispWin.u16X = iDispShowX;
-    stDispInputPortAttr.stDispWin.u16Y = iDispShowY;
-    stDispInputPortAttr.u16SrcHeight = iDispShowHeight;
-    stDispInputPortAttr.u16SrcWidth = iDispShowWidth;
+    stDispLayerAttr.stVidLayerSize.u16Height = 800;
+    stDispLayerAttr.stVidLayerSize.u16Width = 1280;
+    stDispInputPortAttr.stDispWin.u16Height = 800;
+    stDispInputPortAttr.stDispWin.u16Width = 1280;
+    stDispInputPortAttr.stDispWin.u16X = 0;
+    stDispInputPortAttr.stDispWin.u16Y = 0;
+    stDispInputPortAttr.u16SrcHeight = 800;
+    stDispInputPortAttr.u16SrcWidth = 1280;
 
     ExecFunc(MI_DISP_SetPubAttr(DISP_DEV_ID, &stDispPubAttr), MI_SUCCESS);
     ExecFunc(MI_DISP_Enable(DISP_DEV_ID), MI_SUCCESS);
@@ -4619,81 +4606,6 @@ char change_BaseModuleInit(Device_Handle_t *video_dev)
     ExecFunc(MI_DISP_SetInputPortSyncMode(2, 0, E_MI_DISP_SYNC_MODE_FREE_RUN), MI_SUCCESS);
 }
 
-
-
-char change_BaseModuleInit_ex(Device_Handle_t *video_dev)
-{
-
-	/*MI_U32 SCL_DEV_ID = 1;
-	MI_U32 SCL_CHN_ID = 0;
-	MI_U32 SCL_PORT_ID = 0;
-	*/
-	
-//	change_scl_resolution(video_dev->width,video_dev->height,SCL_DEV_ID, SCL_CHN_ID, 1);//panel
-	change_scl_resolution(iDispWidth,iDispHeight,SCL_DEV_ID, SCL_CHN_ID, 1);//panel
-
-
-	MI_SCL_OutPortParam_t stSCLOutPortParam;
-	
-	/*int iWidth = 1280;
-	int iHeight = 800;*/
-
-
-    memset(&stSCLOutPortParam, 0x0, sizeof(MI_SCL_OutPortParam_t));
-	MI_SCL_DisableOutputPort(SCL_DEV_ID, SCL_CHN_ID, SCL_PORT_ID);
-	MI_SCL_GetOutputPortParam(SCL_DEV_ID,SCL_CHN_ID, SCL_PORT_ID, &stSCLOutPortParam);
-	
-	stSCLOutPortParam.stSCLOutCropRect.u16X = 0;//(video_dev->width - iWidth)/2;
-    stSCLOutPortParam.stSCLOutCropRect.u16Y = 0;//(video_dev->height - iHeight)/2;
-	stSCLOutPortParam.stSCLOutCropRect.u16Width = iVideoWidth_Scl;//iWidth;
-    stSCLOutPortParam.stSCLOutCropRect.u16Height = iVideoHeight_Scl;//iWidth;
-	
-    stSCLOutPortParam.stSCLOutputSize.u16Width = iDispShowWidth;
-    stSCLOutPortParam.stSCLOutputSize.u16Height = iDispShowHeight;
-	MI_SCL_SetOutputPortParam(SCL_DEV_ID, SCL_CHN_ID, SCL_PORT_ID, &stSCLOutPortParam);
-    MI_SCL_EnableOutputPort(SCL_DEV_ID, SCL_CHN_ID, SCL_PORT_ID);
-
- 
-	//disp
-	MI_DISP_PubAttr_t stDispPubAttr;
-    MI_DISP_VideoLayerAttr_t stDispLayerAttr;
-    MI_DISP_InputPortAttr_t stDispInputPortAttr;
-
-
-	MI_DISP_DisableInputPort(DISP_LAYER_ID, 0);
-    MI_DISP_DisableVideoLayer(DISP_LAYER_ID);
-    MI_DISP_UnBindVideoLayer(DISP_LAYER_ID, DISP_DEV_ID);
-    MI_DISP_Disable(DISP_DEV_ID);
-
-	memset(&stDispPubAttr, 0, sizeof(stDispPubAttr));
-    memset(&stDispLayerAttr, 0, sizeof(stDispLayerAttr));
-    memset(&stDispInputPortAttr, 0, sizeof(stDispInputPortAttr));
-	stDispPubAttr.eIntfSync = E_MI_DISP_OUTPUT_USER;
-    stDispPubAttr.eIntfType = E_MI_DISP_INTF_MIPIDSI;
-    stDispPubAttr.u32BgColor = YUYV_BLACK;
-    stDispLayerAttr.ePixFormat = E_MI_SYS_PIXEL_FRAME_YUV_SEMIPLANAR_420;
-    stDispLayerAttr.stVidLayerDispWin.u16Height = iDispHeight;
-    stDispLayerAttr.stVidLayerDispWin.u16Width = iDispWidth;
-    stDispLayerAttr.stVidLayerDispWin.u16X = 0;
-    stDispLayerAttr.stVidLayerDispWin.u16Y = 0;
-    stDispLayerAttr.stVidLayerSize.u16Height = iDispHeight;
-    stDispLayerAttr.stVidLayerSize.u16Width = iDispWidth;
-    stDispInputPortAttr.stDispWin.u16Height = iDispShowHeight;
-    stDispInputPortAttr.stDispWin.u16Width = iDispShowWidth;
-    stDispInputPortAttr.stDispWin.u16X = iDispShowX;
-    stDispInputPortAttr.stDispWin.u16Y = iDispShowY;
-    stDispInputPortAttr.u16SrcHeight = iDispShowHeight;
-    stDispInputPortAttr.u16SrcWidth = iDispShowWidth;
-
-    ExecFunc(MI_DISP_SetPubAttr(DISP_DEV_ID, &stDispPubAttr), MI_SUCCESS);
-    ExecFunc(MI_DISP_Enable(DISP_DEV_ID), MI_SUCCESS);
-    ExecFunc(MI_DISP_BindVideoLayer(DISP_LAYER_ID,DISP_DEV_ID), MI_SUCCESS);
-    ExecFunc(MI_DISP_SetVideoLayerAttr(DISP_LAYER_ID, &stDispLayerAttr), MI_SUCCESS);
-    ExecFunc(MI_DISP_EnableVideoLayer(DISP_LAYER_ID), MI_SUCCESS);
-    ExecFunc(MI_DISP_SetInputPortAttr(DISP_LAYER_ID, 0, &stDispInputPortAttr), MI_SUCCESS);
-    ExecFunc(MI_DISP_EnableInputPort(DISP_LAYER_ID, 0), MI_SUCCESS);
-    ExecFunc(MI_DISP_SetInputPortSyncMode(DISP_LAYER_ID, 0, E_MI_DISP_SYNC_MODE_FREE_RUN), MI_SUCCESS);
-}
 
 /*****************************************
 函数名：uvc_stream
@@ -4859,44 +4771,7 @@ char change_BaseModuleInit_ex(Device_Handle_t *video_dev)
 
 }
 */
-//设置视频和显示数据
-static MI_S32 set_video_disp(int iFlag)
-{
-	if (iFlag == 0){//Usb摄像头
-	    if (iChangeSen == 1)
-		   St_VencModuleDeinit(pvideo_dev);
-		iVideoWidth = pvideo_dev->width;
-		iVideoHeight = pvideo_dev->height;
-		iVideoWidth_Scl = iVideoWidth;
-		iVideoHeight_Scl = iVideoHeight;
-		iDispWidth = 1280;
-		iDispHeight = 800;
-     	iDispShowWidth = (iVideoWidth * iDispHeight) / iVideoHeight;
-		if (iDispShowWidth > iDispWidth)
-			iDispShowWidth = iDispWidth;
-		iDispShowHeight = iDispHeight;	
-		iDispShowX = (iDispWidth - iDispShowWidth) / 2;
-		iDispShowY = 0;
-	    if (iChangeSen == 1)
-        	St_VencModuleInit(pvideo_dev);
-	}
-	else{//Mipi摄像头
-	    if (iChangeSen == 1)
-    	    St_VencModuleDeinit(pvideo_dev);
-	    iVideoWidth = 1280;
-		iVideoHeight = 720;
-		iVideoWidth_Scl = 0;
-		iVideoHeight_Scl = 0;
-		iDispWidth = 1280;
-		iDispHeight = 800;
-		iDispShowWidth = 1280;
-		iDispShowHeight = 800;
-		iDispShowX = 0;
-		iDispShowY = 0;
-	    if (iChangeSen == 1)
-           St_VencModuleInit(pvideo_dev);
-	}
-}
+
 
 /*****************************************
 函数名：uvc_stream
@@ -4956,6 +4831,8 @@ void *uvc_stream(void *arg)
 	    if(ret != 0)
 	        printf("video_enum_format is fail!\n");
 
+
+
 		//设置初始化参数
 	    ret = video_set_format(pvideo_dev);
 	    if(ret != 0)
@@ -4966,16 +4843,9 @@ void *uvc_stream(void *arg)
 	}
 	printf("========================3100============\n");
 
-	if (usb_open_flag == true)
-       set_video_disp(0);
-    else   
-       set_video_disp(1);
-  
-	printf("========================3103============\n");
-	
+
 	if(video_flag == true)
 	{
-		
 		//mi 模块初始化
 		video_flag = false;
 
@@ -4993,10 +4863,9 @@ void *uvc_stream(void *arg)
 	}
 	else
 	{
-		
 		if(usb_open_flag == false)
 			return NULL;
-		change_BaseModuleInit_ex(pvideo_dev);
+		change_BaseModuleInit(pvideo_dev);
 		
 	}
 	printf("========================3119===========\n");
@@ -5074,10 +4943,7 @@ void *uvc_stream(void *arg)
     video_deinit(pvideo_dev);
 
     ReleaseCam(1);//释放Usb摄像头
- 
-    set_video_disp(1);
-	
-    change_BaseModuleInit_ex(pvideo_dev);
+
 
 	return NULL;
 
@@ -5855,10 +5721,10 @@ static MI_S32 sstar_module_bind(void)
 
 	scl_width = stVdecOutputPortAttr.u16Width;
 	scl_height = stVdecOutputPortAttr.u16Height;
-	if(stVdecOutputPortAttr.u16Width > iDispWidth || stVdecOutputPortAttr.u16Height > iDispHeight)
+	if(stVdecOutputPortAttr.u16Width > 1280 || stVdecOutputPortAttr.u16Height > 800)
 	{
-		scl_width = iDispWidth;
-		scl_height = iDispHeight;
+		scl_width = 1280;
+		scl_height = 800;
 	}
 	
 
@@ -5866,9 +5732,13 @@ static MI_S32 sstar_module_bind(void)
     MI_DISP_VideoLayerAttr_t stDispLayerAttr;
     MI_DISP_InputPortAttr_t stDispInputPortAttr;
 
-	
-    //xz
+	//xz
+    //usleep(3000*1000);
+    printf("9999999999999999999999\n");
+ 
+    //usleep(3000*1000);
 	ExecFunc(MI_DISP_DisableInputPort(DISP_LAYER_ID, 0), MI_SUCCESS);
+
     // ExecFunc(MI_DISP_DisableVideoLayer(DISP_LAYER_ID), MI_SUCCESS);
     // ExecFunc(MI_DISP_UnBindVideoLayer(DISP_LAYER_ID, DISP_DEV_ID), MI_SUCCESS);
     // ExecFunc(MI_DISP_Disable(DISP_DEV_ID), MI_SUCCESS);
@@ -5884,24 +5754,25 @@ static MI_S32 sstar_module_bind(void)
     stDispPubAttr.eIntfType = E_MI_DISP_INTF_MIPIDSI;
     stDispPubAttr.u32BgColor = YUYV_BLACK;
     stDispLayerAttr.ePixFormat = E_MI_SYS_PIXEL_FRAME_YUV_SEMIPLANAR_420;
-    stDispLayerAttr.stVidLayerDispWin.u16Height = iDispHeight;//scl_width;
-    stDispLayerAttr.stVidLayerDispWin.u16Width = iDispWidth;//scl_height;
+    stDispLayerAttr.stVidLayerDispWin.u16Height = 800;//scl_width;
+    stDispLayerAttr.stVidLayerDispWin.u16Width = 1280;//scl_height;
     stDispLayerAttr.stVidLayerDispWin.u16X = 0;//(720-scl_height)/2;
     stDispLayerAttr.stVidLayerDispWin.u16Y = 0;//(1280-scl_width)/2;
-    stDispLayerAttr.stVidLayerSize.u16Height = iDispHeight;//scl_width;
-    stDispLayerAttr.stVidLayerSize.u16Width = iDispWidth;//scl_height;
-    stDispInputPortAttr.stDispWin.u16Height = iDispShowHeight;
-    stDispInputPortAttr.stDispWin.u16Width = iDispShowWidth;
-    stDispInputPortAttr.stDispWin.u16X = iDispShowX;
-    stDispInputPortAttr.stDispWin.u16Y = iDispShowY;
-    stDispInputPortAttr.u16SrcHeight = iDispShowHeight;
-    stDispInputPortAttr.u16SrcWidth = iDispShowWidth;
+    stDispLayerAttr.stVidLayerSize.u16Height = 800;//scl_width;
+    stDispLayerAttr.stVidLayerSize.u16Width = 1280;//scl_height;
+    stDispInputPortAttr.stDispWin.u16Height = 800;//scl_width;
+    stDispInputPortAttr.stDispWin.u16Width = 1280;//scl_height;
+    stDispInputPortAttr.stDispWin.u16X = 0;//(720-scl_height)/2;
+    stDispInputPortAttr.stDispWin.u16Y = 0;//(1280-scl_width)/2;
+    stDispInputPortAttr.u16SrcHeight = 800;//scl_width;
+    stDispInputPortAttr.u16SrcWidth = 1280;//scl_height;
 
     // ExecFunc(MI_DISP_SetPubAttr(DISP_DEV_ID, &stDispPubAttr), MI_SUCCESS);
     // ExecFunc(MI_DISP_Enable(DISP_DEV_ID), MI_SUCCESS);
     // ExecFunc(MI_DISP_BindVideoLayer(DISP_LAYER_ID,DISP_DEV_ID), MI_SUCCESS);
     // ExecFunc(MI_DISP_SetVideoLayerAttr(DISP_LAYER_ID, &stDispLayerAttr), MI_SUCCESS);
     // ExecFunc(MI_DISP_EnableVideoLayer(DISP_LAYER_ID), MI_SUCCESS);
+
     ExecFunc(MI_DISP_SetInputPortAttr(DISP_LAYER_ID, 0, &stDispInputPortAttr), MI_SUCCESS);
     ExecFunc(MI_DISP_EnableInputPort(DISP_LAYER_ID, 0), MI_SUCCESS);
     ExecFunc(MI_DISP_SetInputPortSyncMode(DISP_LAYER_ID, 0, E_MI_DISP_SYNC_MODE_FREE_RUN), MI_SUCCESS);
@@ -6345,9 +6216,13 @@ static int sstar_ao_deinit(void)
 static void * mmplayer_av_process(void *args)
 {
 	int ret, file_eof = 0;
+    //xz
+   // usleep(3000*1000);
+    printf("22222222222222222!!!!!!!!!\n");
 	AVPlayer *mmplayer = (AVPlayer *)args;
 	AVPacket pkt, *packet = &pkt;
-	
+	//usleep(3000*1000);
+    printf("3333333333333333333311111111\n");
 	//6.一帧一帧读取压缩的音频数据AVPacket
     while (!b_exit)
     {
@@ -6367,16 +6242,22 @@ static void * mmplayer_av_process(void *args)
             file_eof = 0;
             if (packet->stream_index == mmplayer->audio_stream_idx)
             {
+                //usleep(3000 * 1000);
+                //printf("&&&&&&&&&&&&&&&&&&&&&&\n");
                 sstar_packet_put(&mmplayer->a_pkt_queue, packet);
                 //printf("packet queue num : %d\n", mmplayer->a_pkt_queue.nb_packets);
             }
             else if (packet->stream_index == mmplayer->video_stream_idx)
             {
+                //usleep(3000 * 1000);
+               // printf("************************88\n");
                 sstar_packet_put(&mmplayer->v_pkt_queue, packet);
                 //printf("packet queue num : %d\n", mmplayer->v_pkt_queue.nb_packets);
             }
             else
             {
+                //usleep(3000 * 1000);
+                //printf("1111111111111111111222222\n");
                 av_packet_unref(packet);
                // printf("unkown pkt[%d]\n",packet->stream_index);
             }
@@ -6386,6 +6267,9 @@ static void * mmplayer_av_process(void *args)
             if ((ret == AVERROR_EOF || avio_feof(mmplayer->format_ctx->pb)) && !file_eof)
             {
                 printf("avio buffer has been read finish!\n");
+                //printf("555555555555555555555511111111111\n");
+                //usleep(3000 * 1000);
+
                 file_eof = 1;
             }
 
@@ -6410,7 +6294,8 @@ static void * mmplayer_av_process(void *args)
             }
         }
     }
-
+    printf("666666666666666666666\n");
+    //usleep(3000 * 1000);
 	mmplayer->a_pkt_queue.abort_request = 1;
     mmplayer->v_pkt_queue.abort_request = 1;
     pthread_cond_signal(&mmplayer->a_pkt_queue.cond);
@@ -6757,7 +6642,9 @@ MI_S32 kjd_play_mp4(const char *path,int ao_volume)
 	    ExecFunc(ST_Sys_UnBind(&stSysBindInfo), MI_SUCCESS);*/
 		
         St_ResizeLayer(0);
-		
+        //xz
+		//usleep(3000*1000);
+        printf("#################\n");
 		memset(&stSysBindInfo, 0x0, sizeof(stSysBindInfo));
 		Device_Handle_t *video_dev = pvideo_dev;
 		
@@ -6777,6 +6664,9 @@ MI_S32 kjd_play_mp4(const char *path,int ao_volume)
 					stSysBindInfo.u32DstFrmrate = video_dev->frame_rate;
 					stSysBindInfo.eBindType = E_MI_SYS_BIND_TYPE_FRAME_BASE;
 					ExecFunc(ST_Sys_UnBind(&stSysBindInfo), MI_SUCCESS);
+                    //xz
+                   // usleep(3000*1000);
+                    printf("^^^^^^^^^^^^^^^^^^6\n");
 			}
 			else//还没初始化过Mipi摄像头
 			{
@@ -6791,7 +6681,10 @@ MI_S32 kjd_play_mp4(const char *path,int ao_volume)
 					stSysBindInfo.u32SrcFrmrate = video_dev->frame_rate;
 					stSysBindInfo.u32DstFrmrate = video_dev->frame_rate;
 					stSysBindInfo.eBindType = E_MI_SYS_BIND_TYPE_FRAME_BASE;
-					ExecFunc(ST_Sys_Bind(&stSysBindInfo), MI_SUCCESS);				
+					ExecFunc(ST_Sys_Bind(&stSysBindInfo), MI_SUCCESS);	
+                    //xz
+                    //usleep(3000*1000);		
+                    printf("$$$$$$$$$$$$$$$$$$$$$$$\n");	
 			}
 		}
 		else//当前Mipi摄像头为主视频
@@ -6818,6 +6711,8 @@ MI_S32 kjd_play_mp4(const char *path,int ao_volume)
 
 
 	b_exit = false;
+    //usleep(3000*1000);
+    printf("%%%%%%%%%%%%%%%%%%%%%\n");
 
 	int ret = mmplayer(path,ao_volume);
 	if(ret == 0)
@@ -10232,8 +10127,8 @@ void ReleaseCam(unsigned char iFlag)
 //旋转角度
 int RotateAction(char RotateNum)
 {
-	int iWidth = iDispWidth;
-	int iHeight = iDispHeight;
+	int iWidth = 1280;
+	int iHeight = 800;
 	
     if(0 == RotateNum)//0度
     {
@@ -10373,16 +10268,10 @@ void ChangeMainCam()
 	{
 		if (g_i_MipiCam > 0)
 		{
-			if (g_i_MainCam == g_i_UsbCam){
-			  set_video_disp(1);
-			  change_BaseModuleInit_ex(pvideo_dev);
+			if (g_i_MainCam == g_i_UsbCam)
 		      SetCamToMainVideo(g_i_MipiCam);//设置Mipi摄像头为主视频
-			}
-		    else{
-			  set_video_disp(0);
-			  change_BaseModuleInit_ex(pvideo_dev);
+		    else
 			  SetCamToMainVideo(g_i_UsbCam);//设置Usb摄像头为主视频	
-			}
 		}
 	}
 }
@@ -10441,7 +10330,7 @@ int CheckVoltage()
 
 		  if (iChangeSen == 1)
 		  {
-				  if ((g_f_Vol >=1.2)&&(g_f_Vol <= 2.7))//Mipi摄像头插入(6946)
+				  if ((g_f_Vol >=1.2)&&(g_f_Vol <= 1.6))//Mipi摄像头插入(6946)
 				  {
 					 if (g_i_MipiCam != 2)
 					 {
@@ -10449,13 +10338,7 @@ int CheckVoltage()
 								//St_BaseMipiModuleUnInitFun();
 							 if (iFirstStart == 0) 
 							    St_BaseMipiModuleInitFun();
-							
-                             set_video_disp(1);
-							 
-							 change_BaseModuleInit_ex(pvideo_dev);
-							
-  							 SetCamToMainVideo(2);//设置Mipi摄像头为主视频
-							 
+							 SetCamToMainVideo(2);//设置Mipi摄像头为主视频
 							 iFirstStart = 1;
 							 printf("init mipi module\r\n");
 					 }
@@ -10465,11 +10348,6 @@ int CheckVoltage()
 					 if (g_i_MipiCam == 2)
 					 {
 						 ReleaseCam(2);//释放Mipi摄像头
-						 
-                         set_video_disp(0);
-
-     					 change_BaseModuleInit_ex(pvideo_dev);
-						 
 						 printf("release mipi module\r\n");
 					 }
 				  }
